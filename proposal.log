@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2024.4.18)  18 APR 2024 14:27
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/Debian) (preloaded format=xelatex 2024.4.17)  20 APR 2024 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -249,16 +249,60 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 12.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 12.
- [1
 
-] (./proposal.aux) ) 
+Underfull \hbox (badness 1668) in paragraph at lines 28--29
+\TU/lmr/m/n/10 to collision avoidance,” in IEEE Robotics & Automation Magazine,
+
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 28--29
+\TU/lmr/m/n/10 robotics;Robotics and automation;Motion control;Humans;Robot con
+-
+ []
+
+[1
+
+]
+Underfull \hbox (badness 6978) in paragraph at lines 35--37
+[]\TU/lmr/m/n/10 A. Carrio, J. Tordesillas, S. Vemprala, S. Saripalli, P. Cam-
+ []
+
+
+Underfull \hbox (badness 7869) in paragraph at lines 35--37
+\TU/lmr/m/n/10 poy and J. P. How, ”Onboard Detection and Localization of
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 35--37
+\TU/lmr/m/n/10 Drones Using Depth Maps,” in IEEE Access, vol. 8, pp. 30480-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+\TU/lmr/m/n/10 30490, 2020, doi: 10.1109/ACCESS.2020.2971938. keywords:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+\TU/lmr/m/n/10 Drones;Three-dimensional displays;Feature extraction;Object dete
+c-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--37
+\TU/lmr/m/n/10 tion;Sensors;Training;Cameras;Drone;detection;collision avoidanc
+e;depth
+ []
+
+[2] (./proposal.aux) ) 
 Here is how much of TeX's memory you used:
- 4547 strings out of 481804
- 142001 string characters out of 5937876
- 430779 words of memory out of 5000000
- 21550 multiletter control sequences out of 15000+600000
- 535202 words of font info for 49 fonts, out of 8000000 for 9000
+ 4591 strings out of 481804
+ 144926 string characters out of 5937876
+ 437779 words of memory out of 5000000
+ 21596 multiletter control sequences out of 15000+600000
+ 535194 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,6n,58p,518b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,6n,58p,513b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on proposal.pdf (1 page).
+Output written on proposal.pdf (2 pages).
