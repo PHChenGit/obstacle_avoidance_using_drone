@@ -12,7 +12,11 @@
 	\maketitle
 	
 	\section{Background}
-     滑動視窗是基礎技術
+     避開障礙物是自主移動式機器人在進行自主導航時一項基礎且必不可少的技術，無論是在工廠環境、室內環境、或是戶外環境下都是不可或缺的技能，使得這些機器人可以參與我們的日常生活以及工作。而且這樣的需求不斷在增長，例如：在餐廳中負責帶領客人前往桌位的機器人，在餐廳中負責送參的機器人，在居家環境裡負責清潔工作的機器人，在戶外環境下的自動駕駛汽車。這些機器人面臨一項共同的挑戰，需要避開動態和靜態的障礙物。動態障礙物包括行人，行進中的汽機車等等。靜態障礙物包括桌椅，貨物架，貨物等等。
+     
+     本文中採用的自主移動式機器人為四軸無人機，並且假設在室內環境下避開靜態障礙物。為了解決這個問題，我們使用基於Dynamic Window Approach (DWA)解決方案動態調整機器人行進路線，使得機器人可以避開障礙物。
+     
+     DWA主要是用於局部路徑規劃，在本文中因為使用無人機，所以假設在固定高度下進行實驗，這使得問題可以簡化成在 2D 空間空的路徑規劃問題。DWA在速度空間中採集多組速度，並模擬機器人在這些速度下一定時間內的軌跡。在得到多組軌跡後，對這些軌跡比較，並且從中採取最佳軌跡所對應的速度來驅動機器人運動。
 	\section{Methodology}
 	使用Dynamic Window Approach
 	\section{Expect Results}
@@ -20,13 +24,24 @@
 	
 	\begin{thebibliography}{1}
 		
+		\bibitem{fox}
+		D. Fox, W. Burgard and S. Thrun, The dynamic window approach to collision avoidance," in IEEE Robotics \& Automation Magazine, vol. 4, no. 1, pp. 23-33, March 1997, doi: 10.1109/100.580977. keywords: {Collision avoidance;Mobile robots;Robot sensing systems;Orbital robotics;Robotics and automation;Motion control;Humans;Robot control;Motion planning;Acceleration},
+		
+		\bibitem{missura}
+		M. Missura and M. Bennewitz, "Predictive Collision Avoidance for the Dynamic Window Approach," 2019 International Conference on Robotics and Automation (ICRA), Montreal, QC, Canada, 2019, pp. 8620-8626, doi: 10.1109/ICRA.2019.8794386.
+		keywords: {Trajectory;Vehicle dynamics;Dynamics;Acceleration;Collision avoidance;Robot sensing systems},
+		
+		\bibitem{carrio}
+		A. Carrio, J. Tordesillas, S. Vemprala, S. Saripalli, P. Campoy and J. P. How, "Onboard Detection and Localization of Drones Using Depth Maps," in IEEE Access, vol. 8, pp. 30480-30490, 2020, doi: 10.1109/ACCESS.2020.2971938.
+		keywords: {Drones;Three-dimensional displays;Feature extraction;Object detection;Sensors;Training;Cameras;Drone;detection;collision avoidance;depth map},
+		
 		\bibitem{devos}
-		A. Devos, E. Ebeid and P. Manoonpong, \emph{Development of Autonomous Drones for Adaptive Obstacle Avoidance in Real World Environments,} 2018 21st Euromicro Conference on Digital System Design (DSD), Prague, Czech Republic, 2018, pp. 707-710, doi: 10.1109/DSD.2018.00009. keywords: {Drones;Collision avoidance;System recovery;Laser radar;Navigation;Signal processing algorithms;Propellers;Autonomous drone system;Adaptive obstacle avoidance;Simulation;Implementation},
+		A. Devos, E. Ebeid and P. Manoonpong, "Development of Autonomous Drones for Adaptive Obstacle Avoidance in Real World Environments," 2018 21st Euromicro Conference on Digital System Design (DSD), Prague, Czech Republic, 2018, pp. 707-710, doi: 10.1109/DSD.2018.00009. keywords: {Drones;Collision avoidance;System recovery;Laser radar;Navigation;Signal processing algorithms;Propellers;Autonomous drone system;Adaptive obstacle avoidance;Simulation;Implementation},
 		
+		\bibitem{tordesillas}
+		J. Tordesillas, B. T. Lopez, M. Everett and J. P. How, "FASTER: Fast and Safe Trajectory Planner for Navigation in Unknown Environments," in IEEE Transactions on Robotics, vol. 38, no. 2, pp. 922-938, April 2022, doi: 10.1109/TRO.2021.3100142.
+		keywords: {Trajectory;Safety;Resource management;Optimization;Planning;Aerospace electronics;Hardware;Convex decomposition;path planning;trajectory optimization;UAV},
 		
-		
-		\bibitem{gentry}
-		C. Gentry. \emph{A Fully Homomorphic Encryption Scheme}. PhD thesis, Stanford University, 2009. http://crypto.stanford.edu/craig.
 		
 	\end{thebibliography}
 	
