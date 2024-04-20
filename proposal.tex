@@ -1,5 +1,7 @@
 \documentclass[12pt, a4paper, oneside]{article}
 
+\providecommand{\pgfsyspdfmark}[3]{}
+
 % border setting
 \usepackage[ top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm ]{ geometry }
 
@@ -28,6 +30,10 @@
 	basicstyle=\small,
 	numberfirstline=true
 }
+
+% Insert watermark for each pages
+\usepackage{wallpaper}
+\CenterWallPaper{.18}{ntut_watermark.jpg}
 
 % setting the page number to footer
 \usepackage{fancyhdr}
