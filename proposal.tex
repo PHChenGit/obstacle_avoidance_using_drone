@@ -31,9 +31,20 @@
 	numberfirstline=true
 }
 
+\usepackage{graphicx}
+\graphicspath{ {./figures/} }
+
 % Insert watermark for each pages
-\usepackage{wallpaper}
-\CenterWallPaper{.18}{ntut_watermark.jpg}
+\usepackage{background}
+\backgroundsetup{
+	contents={\includegraphics[]{ntut_watermark.jpg}},
+	scale=0.2,
+	opacity=0.4,
+	angle=0
+}
+
+%\usepackage{wallpaper}
+%\CenterWallPaper{.18}{ \includegraphics[]{ntut_watermark.jpg}}
 
 % setting the page number to footer
 \usepackage{fancyhdr}
