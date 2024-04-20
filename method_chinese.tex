@@ -1,0 +1,21 @@
+\documentclass[crop=false]{standalone}
+\begin{document}
+	\section{Methodology}
+	\subsection{General Kinematics Model}
+	本文實驗使用無人機，並且假設在固定高度下進行，這使得局部路徑規劃問題可以簡化成在2維空間上的路徑規劃問題。DWA 將機器人的位置控制問題轉成速度控制問題，並利用速度控制預測機器人運動軌跡。為此，需要先分析機器人運動模型\cite{fox}，令$x(t), y(t)$為在$t$時間下，機器人的世界座標系下的位姿，且令機器人的方向為$\theta(t)$，則機器人運動可被表達為$<x, y, \theta>$，令機器人的平移速度為$v$，轉向加速度為$\omega(t)$，則一般來說可以表達如下:。
+	
+	\begin{equation}
+		x(t_n)=x(t_0)+ \int_{t_0}^{t_n}v(t) \cdot cos(\theta)dt
+	\end{equation}
+	\begin{equation}
+		y(t_n)=y(t_0)+ \int_{t_0}^{t_n}v(t) \cdot sin(\theta)dt
+	\end{equation}
+	\begin{equation}
+		\theta(t)=\theta(t_0)+\int_{t_0}^{t_n}\omega(t)dt
+	\end{equation}
+	
+	\subsection{Obstacle Avoidance}
+	本文中障礙物為靜態障礙物，且每次隨機生成。在已知障礙座標下，可計算機器人與障礙物之間的距離$dist$，再加上安全距離$dist_{safe}$後可得到機器人避開的空間範圍，$dist$透過歐基里德公式計算後可得到，而安全距離則是根據經驗設置，本文中設定安全距離為5格
+	
+	\subsection{Cost Function}
+\end{document}
