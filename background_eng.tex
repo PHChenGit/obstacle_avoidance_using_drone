@@ -1,0 +1,11 @@
+\documentclass[crop=false]{standalone}
+\begin{document}
+	\section{Background}
+	Avoiding obstacles is a fundamental and essential technology for autonomous mobile robots when performing autonomous navigation. This skill is indispensable in environments such as factories, indoors, or outdoors, enabling these robots to participate in our daily lives and work. The demand for such capabilities is continually growing, for example, robots in restaurants that guide customers to their tables, deliver orders, robots in home environments responsible for cleaning, and autonomous vehicles outdoors. These robots face a common challenge: they need to avoid both dynamic and static obstacles. Dynamic obstacles include pedestrians and moving vehicles, while static obstacles include tables, chairs, racks, and goods.
+	
+	Past research has proposed various unmanned obstacle avoidance methods, including sensor-based methods, visual navigation, and trajectory planning. However, these methods still face certain challenges when dealing with complex environments and dynamic obstacles, such as high computational costs, low operational efficiency, and sensitivity to environmental changes.
+	
+	In this paper, we focus on a quadrotor drone as the autonomous mobile robot and assume it avoids static obstacles in an indoor environment. To address this issue, we use the Dynamic Window Approach (DWA) solution to dynamically adjust the robot's route to navigate around obstacles.
+	
+	DWA is primarily used for local path planning. In this paper, since we use drones, we assume experiments are conducted at a fixed height, simplifying the problem to a 2D space path planning issue. DWA collects multiple velocity sets in velocity space and simulates the robot's trajectory over a certain period at these velocities. After obtaining multiple sets of trajectories, we compare them and select the optimal trajectory's corresponding speed to drive the robot's motion.
+\end{document}
