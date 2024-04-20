@@ -1,15 +1,83 @@
-\documentclass[]{article}
+\documentclass[12pt, a4paper, oneside]{article}
+
+% border setting
+\usepackage[ top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm ]{ geometry }
+
+% The default for LaTeX is to have no indent after sectional headings, like \chapter and \section. ()
+\usepackage{indentfirst}
+
+% http://tex.stackexchange.com/questions/28333/continuous-v-per-chapter-section-numbering-of-figures-tables-and-other-docume
+% 讓圖片，表格編號自動連續編號
+\usepackage{chngcntr}
+\counterwithout{figure}{section}
+\counterwithout{table}{section}
+
+% This prevents placing floats before a section
+\usepackage[section]{placeins}
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection}
+
+% source code hightlighting
+\usepackage{listings}
+\lstset{
+	numbers=left,
+	stepnumber=1,
+	firstnumber=1,
+	captionpos=b,
+	tabsize=2,
+	basicstyle=\small,
+	numberfirstline=true
+}
+
+% setting the page number to footer
+\usepackage{fancyhdr}
+\fancyhf{}
+\cfoot{\thepage}
+\pagestyle{fancy}
+% no header and footer bar
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% line height setting
+\linespread{1.5}
+\usepackage{setspace}
 
 \usepackage{xeCJK} %打中文必備
 \setCJKmainfont{Noto Sans CJK TC} %設定中文字型，而英文不去更動
 
-%opening
-\title{Obstacle Avoidance Using Drone With Onboard Camera}
-\author{Pao-Hsun, Chen, and Yong-Jhen, Jheng}
+\usepackage{pdfpages}
+
+\newcommand{\englishTitle}{Obstacle Avoidance Using Dynamic Window Approach For Drone}
+
+\newcommand{\studentEnName}{Pao-Hsun, Chen, and Yong-Jhen, Jheng}
+\newcommand{\advisorEnName}{Huei-Yung Lin}
+
 
 \begin{document}
 	
-	\maketitle
+	%\maketitle
+	\begin{titlepage}
+		\begin{center}
+			\LARGE
+			\begin{singlespace}
+				\textbf{\englishTitle{}} \\[0.5cm]
+			\end{singlespace}
+			
+			\begin{singlespace}
+				\begin{tabular}{r l}
+					Student     & : \studentEnName{}  \\
+					Advisor  & : Dr. \advisorEnName{} \\[0.5cm]
+				\end{tabular}
+			\end{singlespace}
+			
+			\begin{singlespace}
+				Department of Computer Science
+				and Information Engineering
+				National Taipei University of Technology\\[0.5cm]
+			\end{singlespace}
+			
+		\end{center}
+	\end{titlepage}
 	
 	\section{Background}
      避開障礙物是自主移動式機器人在進行自主導航時一項基礎且必不可少的技術，無論是在工廠環境、室內環境、或是戶外環境下都是不可或缺的技能，使得這些機器人可以參與我們的日常生活以及工作。而且這樣的需求不斷在增長，例如：在餐廳中負責帶領客人前往桌位的機器人，在餐廳中負責送參的機器人，在居家環境裡負責清潔工作的機器人，在戶外環境下的自動駕駛汽車。這些機器人面臨一項共同的挑戰，需要避開動態和靜態的障礙物。動態障礙物包括行人，行進中的汽機車等等。靜態障礙物包括桌椅，貨物架，貨物等等。
