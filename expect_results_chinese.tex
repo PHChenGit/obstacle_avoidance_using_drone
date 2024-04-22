@@ -1,9 +1,34 @@
 \documentclass[crop=false]{standalone}
+
 \begin{document}
 	\section{Expected Result}
-    我們預期使用Dynamic Window Approach (DWA)方法將能夠有效地提高無人機在靜態環境中的避障能力。透過結合感知和控制，加上DWA方法能夠快速生成並選擇最優的移動速度和方向，使無人機能夠即時地避開障礙物，確保安全和順暢的飛行。
+	本文實驗假設無人機在固定高度，固定速度下前進，並且給定三個參數，1) 給定無人機初始座標位置，2) 給定終點目標 3)隨機生成多個障礙物後，將障礙物位置當成第二個輸入參數。我們預期在獲得輸入參數後，無人機起飛後會首先調整前進方向，由於本文假設無人機以固定速度前進，只需要持續計算與障礙物的距離，並且與障礙物保持安全距離，以及調整方向在並避開障礙物的同時也保持朝向終點方向前進。總結來說，我們預期透過使用DWA方法，無人機將能夠避開障礙物，並以穩定的速度行向自目的地， 如圖1所示：
     
-    具體來說，我們期望DWA方法能夠使無人機在給定隨機障礙物與靜態環境中表現良好。我們預期無人機將能夠避開障礙物並找到最優的行進路徑，同時保持穩定和平滑的飛行。此外，我們還期望DWA方法能夠在保證飛行安全性的同時，具有較高的計算效率，能夠在實時性要求下快速運行。
-    
-    總結來說，我們預期透過使用DWA方法，無人機將能夠避開障礙物，並以穩定的速度行向自目的地，從而提高無人機在實際應用中的運行效率和安全性，推動無人機技術在各個應用領域的廣泛應用。
+    \begin{figure}[!ht]	
+    	\centering
+    	
+    	\subfloat[Initial\label{subfig-1:DWA}]{%
+    		\includegraphics[width=0.2\textwidth]{dwa_frame_0}
+    	}
+    	\quad
+    	
+    	\subfloat[Go\label{subfig-2:DWA}]{%
+    		\includegraphics[width=0.2\textwidth]{dwa_frame_1}
+    	}
+    	\quad
+    	
+    	\subfloat[Adjusting path to avoid obstacles\label{subfig-3:DWA}]{%
+    		\includegraphics[width=0.2\textwidth]{dwa_frame_2}
+    	}
+    	\quad
+    	
+    	\subfloat[Arrived\label{subfig-4:DWA}]{%
+    		\includegraphics[width=0.2\textwidth]{dwa_frame_3}
+    	}
+
+    	
+    	\caption{DWA path planning}
+    	\label{fig:DWA path planning}
+    \end{figure}
 \end{document}
+

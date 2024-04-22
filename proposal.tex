@@ -31,6 +31,7 @@
 	numberfirstline=true
 }
 
+\usepackage{subfig}
 \usepackage{graphicx}
 \graphicspath{ {./figures/} }
 
@@ -79,6 +80,9 @@
 \begin{document}
 	\input{cover_eng.tex}
 	
+	\listoffigures
+	\listoftables
+	
 	\input{background_chinese.tex}
 	\newpage
 	\input{background_eng.tex}
@@ -92,6 +96,9 @@
 	\input{expect_results_chinese.tex}
 	\newpage
 	\input{expect_results_eng.tex}
+	\newpage
+	
+	\input{furtherwork_chinese.tex}
 	\newpage
 	
 	
