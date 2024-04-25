@@ -1,6 +1,15 @@
 \documentclass[crop=false]{standalone}
 \begin{document}
 	\section{Methodology}
+	\subsection{System Overview}
+	系統架構如圖一所示，由RGBD攝影機拍攝具有深度影像資訊後，將RGB影像與深度影像輸入進YOLO物件偵測模型。交由深度學習模型負責執行物件偵測，再由模型偵測到的物件位置轉換座標系後給DWA動態調整路徑。此外，加入最短路徑演算法，提升 DWA在評選路徑時的速度。此最短路徑能使得無人機以最少時間情況下抵達指定的地點，並且能夠避開障礙物。
+	
+	\begin{figure*}[thbp!]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{furtherwork_workflow}}
+		\caption{The system architecture}
+		\label{fig:system}
+	\end{figure*}
 	\subsection{General Kinematics Model}
 	本文實驗使用無人機，並且假設在固定高度且固定速度下進行，這使得局部路徑規劃問題可以簡化成在2維空間上的路徑規劃問題。DWA 將機器人的位置控制問題轉成速度控制問題，並利用速度控制預測機器人運動軌跡。為此，需要先分析機器人運動模型\cite{fox}，令$x(t), y(t)$為在$t$時間下，機器人的世界座標系下的位姿，且令機器人的方向為$\theta(t)$，則機器人運動可被表達為$<x, y, \theta>$，令機器人的平移速度為$v$，轉向加速度為$\omega(t)$，則一般來說可以表達如下:
 	
