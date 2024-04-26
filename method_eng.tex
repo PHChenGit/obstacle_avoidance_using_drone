@@ -2,11 +2,11 @@
 \begin{document}
 	\section{Methodology}
 	\subsection{System Overview}
-	The system architecture, as shown in Figure 1, begins with RGBD cameras capturing images with depth information. These RGB and depth images are then fed into the YOLO object detection model. The object detection task is performed by a deep learning model, which detects objects and provides their positions. These positions are then transformed into coordinates and used by the DWA for dynamic path adjustment. Additionally, a shortest path algorithm is incorporated to enhance the speed of path selection in DWA. This shortest path allows the drone to reach the specified location in minimal time while avoiding obstacles.
+	As shown in Figure 1, the system architecture includes a camera mounted on the drone, such as an RGB-D or RGB camera, which captures images. These images are then fed to a deep learning model responsible for object detection. The positions of the detected objects are converted into coordinates and provided to the Dynamic Window Approach (DWA) algorithm for dynamic path adjustment. The output is the optimal path as evaluated by the DWA algorithm. Additionally, shortest path algorithms like $A^*$ and Dijkstra are incorporated to enhance the speed of path selection by the DWA.
 	
 	\begin{figure*}[thbp!]
 		\centering
-		\fbox{\includegraphics[width=\textwidth]{furtherwork_workflow}}
+		\includegraphics[width=\textwidth]{system_architecture}
 		\caption{The system architecture}
 		\label{fig:system}
 	\end{figure*}
@@ -44,4 +44,7 @@
 		normalVelocity(i)=\frac{velocity(i)}{\sum_{i=1}^{n}{velocity(i)}}
 	\end{equation}
 	Here, n represents all sampled trajectories, and i denotes the current trajectory being evaluated.
+	
+	\subsection{Application Scenarios}
+	This paper assumes a scenario where drones are flying outdoors, facing static obstacles such as flowers, trees, buildings, etc., as well as dynamic obstacles such as pedestrians, cars, motorcycles, and animals. The algorithm presented in this paper enables route adjustments to avoid these obstacles, paving the way for future applications in drone-based delivery services.
 \end{document}

@@ -2,11 +2,11 @@
 \begin{document}
 	\section{Methodology}
 	\subsection{System Overview}
-	系統架構如圖一所示，由RGBD攝影機拍攝具有深度影像資訊後，將RGB影像與深度影像輸入進YOLO物件偵測模型。交由深度學習模型負責執行物件偵測，再由模型偵測到的物件位置轉換座標系後給DWA動態調整路徑。此外，加入最短路徑演算法，提升 DWA在評選路徑時的速度。此最短路徑能使得無人機以最少時間情況下抵達指定的地點，並且能夠避開障礙物。
+	系統架構如圖一所示，無人機上裝設一顆攝影機如RGB-D攝影機或是RGB攝影機拍攝畫面，然後將攝影機取得的畫面提供給深度學習模型，由深度學習模型負責執行物件偵測，再由模型偵測到的物件位置轉換座標系後提供給DWA演算法動態調整路徑，輸出為經過DWA演算法評分後的最佳路徑。此外，加入最短路徑演算法，例如$A^*$, Dijkstra等最短路徑演算法提升DWA在評選路徑時的速度。
 	
 	\begin{figure*}[thbp!]
 		\centering
-		\fbox{\includegraphics[width=\textwidth]{furtherwork_workflow}}
+		\includegraphics[width=\textwidth]{system_architecture}
 		\caption{The system architecture}
 		\label{fig:system}
 	\end{figure*}
@@ -45,4 +45,7 @@
 		normalVelocity(i)=\frac{velocity(i)}{\sum_{i=1}^{n}{velocity(i)}}
 	\end{equation}
 	其中n為所有採樣的軌跡，i為現在等待評比的當前軌跡
+	
+	\subsection{Application Scenarios}
+	本文應用場景假設無人機在戶外飛行時，面對靜態障礙物，如花草樹木，建築物等，以及動態障礙物，如行人，汽車，機車，動物等，皆能透過本文的演算法進行路線調整，避開障礙物調整路線，使得未來能夠應用在無人機貨物外送等場景。
 \end{document}
