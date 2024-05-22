@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/latex,c++,python,ros
 # Edit at https://www.toptal.com/developers/gitignore?templates=latex,c++,python,ros
 
+### ROS ###
+catkin_ws/build/*
+catkin_ws/devel/*
+*/.catkin_workspace
+*/install_geographiclib_datasets.sh
+
 ### C++ ###
 # Prerequisites
 *.d
