@@ -106,23 +106,30 @@
     </include>
   </group>
 
+  <arg name="localization" default="false"/>
+  <arg name="rtabmap_viz"   default="true"/>
+  <arg name="ground_truth" default="false"/>
+  <arg name="rtabmap_args" default="--delete_db_on_start" />
 
-    <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
-            <arg name="rtabmap_args"       value="--delete_db_on_start"/>
-            <!-- <arg name="frame_id"           value="$(arg camera)_link"/> -->
-            <arg name="frame_id"           value="base_link"/>
-            <!--<arg name="visual_odometry"    value="false"/> -->
-            <arg name="odom_topic"         value="odom"/>
-            <arg name="rgb_topic"          value="/irs/camera/rgb/image_raw" />
-            <arg name="depth_topic"        value="/iris/camera/depth/image_raw" />
-            <arg name="camera_info_topic"  value="/iris/camera/rgb/camera_info"/>
-            <arg name="queue_size"         value="200"/>
-            <arg name="rviz"               value="false"/>
-            <arg name="rtabmapviz"         value="true"/>
-            <arg name="approx_sync" value="true" />
-    </include>
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <arg name="localization"      value="$(arg localization)" />
+    <arg name="rtabmap_args"       value="$(arg rtabmap_args)" />
+    <!-- <arg name="frame_id"           value="$(arg camera)_link"/> -->
+    <arg name="frame_id"           value="base_link"/>
+    <!--<arg name="visual_odometry"    value="false"/> -->
+    <arg name="odom_topic"         value="odom"/>
+    <arg name="rgb_topic"          value="/irs/camera/rgb/image_raw" />
+    <arg name="depth_topic"        value="/iris/camera/depth/image_raw" />
+    <arg name="camera_info_topic"  value="/iris/camera/rgb/camera_info"/>
+    <arg name="queue_size"         value="200"/>
+    <arg name="rviz"               value="false"/>
+    <arg name="rtabmapviz"         value="$(arg rtabmap_viz)"/>
+    <arg name="approx_sync" value="true" />
+  </include>
 
-    <node pkg="tf" type="static_transform_publisher" name="body_to_base_link" args="0.13 0 0 -1.57 0 -1.57 /base_link /camera_link 30" /> 
+  <!-- Add static tf -->
+  
+  <!-- <node pkg="tf" type="static_transform_publisher" name="body_to_base_link" args="0.13 0 0 -1.57 0 -1.57 /base_link /camera_link 30" />  -->
 </launch>
 
 
