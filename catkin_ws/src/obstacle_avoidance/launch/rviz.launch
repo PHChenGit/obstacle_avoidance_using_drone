@@ -1,0 +1,3 @@
+<launch>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find obstacle_avoidance)/rviz/rtabmap_d435i.rviz" required="true" />
+</launch>
