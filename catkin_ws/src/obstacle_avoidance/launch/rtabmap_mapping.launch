@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Arguments for launch file with defaults provided -->
+  <!-- <arg name="database_path"     default="/home/workspace/catkin_ws/rtabmap.db"/> -->
+  <arg name="rgb_topic"   default="/iris/camera/rgb/image_raw"/>
+  <arg name="depth_topic" default="/iris/camera/depth/image_raw"/>
+  <arg name="camera_info_topic" default="/iris/camera/rgb/camera_info"/>
+  <arg name="odom_topic" default="/mavros/local_position/odom"/>
+
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch">           
+    <arg name="rtabmap_args"       value="--delete_db_on_start --Optimizer/GravitySigma 0.3"/>
+    <arg name="depth_topic"        value="$(arg depth_topic)"/>
+    <arg name="visual_odometry"    value="true"/>
+    <arg name="odom_topic"         value="$(arg odom_topic)"/>
+    <arg name="rgb_topic"          value="$(arg rgb_topic)"/>
+    <arg name="camera_info_topic"  value="$(arg camera_info_topic)"/>
+    
+    <arg name="rviz"               value="false"/>
+    <arg name="rtabmapviz"         value="true"/>
+  </include>  
+  
+</launch>
