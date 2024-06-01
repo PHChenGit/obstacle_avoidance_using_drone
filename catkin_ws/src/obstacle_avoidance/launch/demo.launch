@@ -1,6 +1,7 @@
 <launch>
     <include file="$(find obstacle_avoidance)/launch/gazebo.launch" />
-    <include file="$(find obstacle_avoidance)/launch/rs_rtabmap_d435.launch" />
+    <!-- <include file="$(find obstacle_avoidance)/launch/rs_rtabmap_d435.launch" /> -->
     <include file="$(find obstacle_avoidance)/launch/mavros.launch" />
     <include file="$(find obstacle_avoidance)/launch/rviz.launch" />
+
 </launch>
